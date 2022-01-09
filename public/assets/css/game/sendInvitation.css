@@ -1,0 +1,73 @@
+h2, h5 {
+    text-shadow: 1px 1px 10px black;
+}
+
+.align-items-center .col h5 {
+    margin-top: 10px;
+}
+
+@media only screen and (min-width: 640px) {
+    .container {
+        width: 80%;
+    }
+
+    .col {
+        margin: 20px;
+    }
+
+    .align-btn {
+        margin-top: 20px;
+    }
+    
+    .align-btn .btn {
+        margin: 5px;
+        width: 180px;       
+    }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 640px) {
+    .container {
+        width: 80%;
+    }
+
+    .col {
+        min-width: 80%;
+        margin: 20px;
+    }
+    
+    .align-btn {
+        margin: 20px 0px 20px 0px;
+    }
+
+    .align-btn .btn {
+        margin: 10px;
+        width: 200px;  
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .container {
+        width: 80%;
+    }
+
+    .col {
+        min-width: 80%;
+        margin: 20px;
+    }
+    
+    .align-btn button {
+        margin: 20px 0px 10px 0px;
+        width: 200px; 
+    }
+
+    .align-btn a {
+        margin: 10px 0px 20px 0px;
+        width: 200px; 
+    }
+}
+
+label {
+    margin-top: 15px;
+    font-size: 18px;
+    text-shadow: 1px 1px 10px black;
+}

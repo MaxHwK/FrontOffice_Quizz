@@ -1,0 +1,174 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Nouvelle partie{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="/assets/css/game/launchGame.css">
+{% endblock %}
+
+{% block toggler %}  
+    <li class="nav-item">
+        <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+    </li>
+{% endblock %}
+
+{% block navbar %}
+    <li class="nav-item">
+        <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+    </li>
+{% endblock %}
+
+{% block body %}
+    <form method="post" action="/sendinvitation" id="myform">
+        <div class="container">
+            <h2 class="text-center">Création de la partie de {{ user.username }} en cours ...</h2> <br> <br>
+
+            <div class="row align-items-start">
+                <div class="col">
+                    <h5 class="text-center">Joueur n°1</h5>
+                    <label for="player-one">Pseudo</label>
+                    <input type="text" autocomplete="off" class="form-control player" id="player" name="player-one" value="{{ user.username }}" required>
+                    <div class="results"> </div>
+
+                    <label for="select-color">Couleur</label>
+                    <select id="select-color" name="colorOne" onchange="this.style.color=this.value" value="{{ select-color-one }}">
+                        <option value="">▉▉▉</option>
+                        <option value="blue" class="blue">▉▉▉</option>
+                        <option value="red" class="red">▉▉▉</option>
+                        <option value="gold" class="gold">▉▉▉</option>
+                        <option value="green" class="green">▉▉▉</option>
+                        <option value="orange" class="orange">▉▉▉</option>
+                        <option value="pink" class="pink">▉▉▉</option>
+                        <option value="purple" class="purple">▉▉▉</option>
+                        <option value="brown" class="brown">▉▉▉</option>
+                        <option value="limegreen" class="limegreen">▉▉▉</option>
+                        <option value="skyblue" class="skyblue">▉▉▉</option>
+                   </select>
+                </div>  
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°2</h5>
+                    <label for="player-two">Pseudo</label>
+                    <input type="text" autocomplete="off" class="form-control player" id="player" name="player-two" value="" placeholder="Flabinouse" required>
+                    <div class="results"> </div>
+                
+                    <label for="select-color">Couleur</label>
+                    <select id="select-color" name="colorTwo" onchange="this.style.color=this.value" value="{{ select-color-two }}">
+                        <option value="">▉▉▉</option>
+                        <option value="blue" class="blue">▉▉▉</option>
+                        <option value="red" class="red">▉▉▉</option>
+                        <option value="gold" class="gold">▉▉▉</option>
+                        <option value="green" class="green">▉▉▉</option>
+                        <option value="orange" class="orange">▉▉▉</option>
+                        <option value="pink" class="pink">▉▉▉</option>
+                        <option value="purple" class="purple">▉▉▉</option>
+                        <option value="brown" class="brown">▉▉▉</option>
+                        <option value="limegreen" class="limegreen">▉▉▉</option>
+                        <option value="skyblue" class="skyblue">▉▉▉</option>
+                   </select>
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°3</h5>
+                    <label for="player-three">Pseudo</label>
+                    <input type="text" autocomplete="off" class="form-control player" id="player" name="player-three" value="">
+                    <div class="results"> </div>
+                
+                    <label for="select-color">Couleur</label>
+                    <select id="select-color" name="colorThree" onchange="this.style.color=this.value" value="{{ select-color-three }}">
+                        <option value="">▉▉▉</option>
+                        <option value="blue" class="blue">▉▉▉</option>
+                        <option value="red" class="red">▉▉▉</option>
+                        <option value="gold" class="gold">▉▉▉</option>
+                        <option value="green" class="green">▉▉▉</option>
+                        <option value="orange" class="orange">▉▉▉</option>
+                        <option value="pink" class="pink">▉▉▉</option>
+                        <option value="purple" class="purple">▉▉▉</option>
+                        <option value="brown" class="brown">▉▉▉</option>
+                        <option value="limegreen" class="limegreen">▉▉▉</option>
+                        <option value="skyblue" class="skyblue">▉▉▉</option>
+                   </select>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col">
+                    <h5 class="text-center">Joueur n°4</h5>
+                    <label for="player-four">Pseudo</label>
+                    <input type="text" autocomplete="off" class="form-control player" id="player" name="player-four" value="">
+                    <div class="results"> </div>
+                
+                    <label for="select-color">Couleur</label>
+                    <select id="select-color" name="colorFour" onchange="this.style.color=this.value" value="{{ select-color-four }}">
+                        <option value="">▉▉▉</option>
+                        <option value="blue" class="blue">▉▉▉</option>
+                        <option value="red" class="red">▉▉▉</option>
+                        <option value="gold" class="gold">▉▉▉</option>
+                        <option value="green" class="green">▉▉▉</option>
+                        <option value="orange" class="orange">▉▉▉</option>
+                        <option value="pink" class="pink">▉▉▉</option>
+                        <option value="purple" class="purple">▉▉▉</option>
+                        <option value="brown" class="brown">▉▉▉</option>
+                        <option value="limegreen" class="limegreen">▉▉▉</option>
+                        <option value="skyblue" class="skyblue">▉▉▉</option>
+                   </select>
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°5</h5>
+                    <label for="player-five">Pseudo</label>
+                    <input type="text" autocomplete="off" class="form-control player" id="player" name="player-five" value="">
+                    <div class="results"> </div>
+                
+                    <label for="select-color">Couleur</label>
+                    <select id="select-color" name="colorFive" onchange="this.style.color=this.value" value="{{ select-color-five }}">
+                        <option value="">▉▉▉</option>
+                        <option value="blue" class="blue">▉▉▉</option>
+                        <option value="red" class="red">▉▉▉</option>
+                        <option value="gold" class="gold">▉▉▉</option>
+                        <option value="green" class="green">▉▉▉</option>
+                        <option value="orange" class="orange">▉▉▉</option>
+                        <option value="pink" class="pink">▉▉▉</option>
+                        <option value="purple" class="purple">▉▉▉</option>
+                        <option value="brown" class="brown">▉▉▉</option>
+                        <option value="limegreen" class="limegreen">▉▉▉</option>
+                        <option value="skyblue" class="skyblue">▉▉▉</option>
+                   </select>
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°6</h5>
+                    <label for="player-six">Pseudo</label>
+                    <input type="text" autocomplete="off" class="form-control player" id="player" name="player-six" value="">
+                    <div class="results"> </div>
+                
+                    <label for="select-color">Couleur</label>
+                    <select id="select-color" name="colorSix" onchange="this.style.color=this.value" value="{{ select-color-six }}">
+                        <option value="">▉▉▉</option>
+                        <option value="blue" class="blue">▉▉▉</option>
+                        <option value="red" class="red">▉▉▉</option>
+                        <option value="gold" class="gold">▉▉▉</option>
+                        <option value="green" class="green">▉▉▉</option>
+                        <option value="orange" class="orange">▉▉▉</option>
+                        <option value="pink" class="pink">▉▉▉</option>
+                        <option value="purple" class="purple">▉▉▉</option>
+                        <option value="brown" class="brown">▉▉▉</option>
+                        <option value="limegreen" class="limegreen">▉▉▉</option>
+                        <option value="skyblue" class="skyblue">▉▉▉</option>
+                   </select>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Continuer <i class="bi bi-arrow-right"></i></button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block js %}
+    <script src="/js/autocomplete.js"></script>
+        <script src="/js/color.js"></script>
+    <script src="/js/main.js"></script>
+{% endblock %}

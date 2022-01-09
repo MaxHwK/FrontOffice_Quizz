@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Modification d'un Utilisateur{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/admin/updateObject.css">
+{% endblock %}
+
+{% block toggler %} 
+    <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+{% endblock %}
+
+{% block navbar %}  
+    <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>  
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" placeholder="Flabinouse">
+                <div class="bg-danger text-white text-center" >{{ usernameError }}</div>
+
+                <label for="firstName">Prenom</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" value="{{ user.firstName }}" placeholder="Flavien">
+                <div class="bg-danger text-white text-center">{{ firstnameError }}</div>
+
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" value="{{ user.lastName }}" placeholder="Lambert">
+                <div class="bg-danger text-white text-center">{{ lastnameError }}</div>
+                
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{ user.email }}" placeholder="mon.adresse@mail.com">
+                <div class="bg-danger text-white text-center">{{ emailError }}</div>
+            </div>
+
+            <div class="align-btn text-center">
+                <a href="/user" class="btn btn-dark">Retour</a>
+                <button type="submit" class="btn btn-primary">Appliquer</button>    
+            </div>
+            
+            {% if updateError != null %}
+            <div class="p-1 mb-1 bg-danger text-white text-center">{{ updateError }}</div>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

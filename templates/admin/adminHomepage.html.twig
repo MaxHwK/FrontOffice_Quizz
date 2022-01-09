@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+
+{% block toggler %} 
+    <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+{% endblock %}
+
+{% block navbar %}  
+    <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>  
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h2 class="text-center">Bienvenue {{ user.username }} sur le système d'administration du site !</h2>
+        
+        <div class="text-center ctn-connexion">
+            <h4 class="text-center">{{ numberOfUsers }} Utilisateurs inscrits actuellement.</h4> <br>
+            <a href="/user" class="btn btn-primary btn-lg">Administation des Utilisateurs</a> <br> <br> <br>
+            <h4 class="text-center">{{ numberOfQuestions }} Questions enregistrées actuellement.</h4> <br>
+            <a href="/question" class="btn btn-dark btn-lg">Administation des Questions</a> <br> <br> <br>
+        </div>
+
+    </div>
+{% endblock %}

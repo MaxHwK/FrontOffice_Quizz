@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+
+{% block toggler %}
+        {% if role == 'ROLE_ADMIN' %}
+            <li class="nav-item">
+                <a class="nav-link" href="/admin"><i class="bi bi-tools"></i> Accès à l'administration <span class="sr-only"></span></a>
+            </li>
+        {% endif %}
+
+        {% if user != null %}
+            <li class="nav-item">
+                <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+            </li>
+        {% endif %}
+{% endblock %}
+
+{% block navbar %}
+        {% if role == 'ROLE_ADMIN' %}
+            <li class="nav-item">
+                <a class="nav-link" href="/admin"><i class="bi bi-tools"></i> Accès à l'administration <span class="sr-only"></span></a>
+            </li>
+        {% endif %}
+
+        {% if user != null %}
+            <li class="nav-item">
+                <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+            </li>
+        {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h2 class="text-center">Bienvenue {{ user.username }} sur le meilleur Quizz de culture générale, le seul et l'unique ...</h2> <br> <br>
+        
+        <h1 class="text-center">Quizz-In !</h1>
+
+        <img src="/assets/img/logo.png"/> <br> <br>
+
+        {% if role == 'ROLE_USER' %}
+            <br>
+            <div class="text-center">
+               <a href="/launchgame" class="btn btn-primary">Nouvelle Partie</a>
+            </div>
+        {% endif %}
+        
+        {% if user == null %}
+            <div class="text-center">
+                <h4>Si vous possédez déjà un compte sur notre application alors <i>Connectez-vous</i> sinon <i>Inscrivez-vous</i>. </h4>
+
+                <div class="align-btn">
+                    <a href="/connection" class="btn btn-primary btn-lg">Se connecter</a>
+                    <a href="/register" class="btn btn-dark btn-lg">S'inscrire</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="/js/main.js"></script>
+{% endblock %}

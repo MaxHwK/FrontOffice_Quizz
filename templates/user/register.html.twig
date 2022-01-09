@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/user/register.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{ post['username'] }}" placeholder="Flabinouse">
+                <div class="bg-danger text-white text-center" >{{ usernameError }}</div>
+        
+                <label for="password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="password" value="" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                <div class="bg-danger text-white text-center" >{{ passwordError }}</div>  
+
+                <label for="confpwd">Confirmation du mot de passe</label>
+                <input type="password" class="form-control" id="confpwd" name="confpwd" value="" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                <div class="bg-danger text-white text-center" >{{ passwordConfError }}</div>
+
+                <label for="firstName">Prenom</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" value="{{ post['firstName'] }}" placeholder="Flavien">
+                <div class="bg-danger text-white text-center">{{ firstnameError }}</div>
+
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" value="{{ post['lastName'] }}" placeholder="LAMBERT">
+                <div class="bg-danger text-white text-center">{{ lastnameError }}</div>
+                
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{ post['email'] }}" placeholder="mon.adresse@mail.com">
+                <div class="bg-danger text-white text-center">{{ emailError }}</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+
+            <div class="align-item">
+                <a>Vous possédez déjà un compte ?</a>
+                <a href="/connection"> Se connecter</a>
+            </div>
+
+            {% if registerError != null %}
+            <div class="p-1 mb-1 bg-danger text-white text-center">{{ registerError }}</div>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

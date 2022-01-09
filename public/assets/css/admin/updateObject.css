@@ -1,0 +1,18 @@
+.container {
+    width: 400px;
+}
+
+label {
+    margin-top: 15px;
+    font-size: 16px;
+    text-shadow: 1px 1px 10px black;
+}
+
+.align-btn {
+    margin-top: 20px;
+}
+
+.btn {
+    margin: 8px;
+    width: 110px;
+}

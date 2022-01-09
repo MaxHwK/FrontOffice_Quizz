@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Envoi des Invitations{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/game/sendInvitation.css">
+{% endblock %}
+
+{% block toggler %}  
+    <li class="nav-item">
+        <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+    </li>
+{% endblock %}
+
+{% block navbar %}
+    <li class="nav-item">
+        <a class="nav-link deconnexion" href="/disconnection"><i class="bi bi-x-circle-fill"></i> Se déconnecter <span class="sr-only"></span></a>
+    </li>
+{% endblock %}
+
+{% block body %}
+    <div class="container" id="mail-body">
+        <form method="post" action="#">
+            <h2 class="text-center">Création de la partie de {{ user.username }} en cours ...</h2> <br> <br>
+
+            <div class="row align-items-start">
+                <div class="col">
+                    <h5 class="text-center">Joueur n°1</h5>
+                    <input type="text" class="text-center form-control mail-player" id="player" name="playerOne" value="{{ user.username }}">
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°2</h5>
+                    <input type="text" class="text-center form-control mail-player" id="player" name="player-two" value="{{ playertwo }}">
+                </div> 
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°3</h5>
+                    <input type="text" class="text-center form-control mail-player" id="player" name="player-three" value="{{ playerthree }}">
+                 </div> 
+            </div> 
+                
+            <div class="row align-items-center">
+                <div class="col">
+                    <h5 class="text-center">Joueur n°4</h5>
+                    <input type="text" class="text-center form-control mail-player" id="player" name="player-four" value="{{ playerfour }}">
+                </div>  
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°5</h5>
+                    <input type="text" class="text-center form-control mail-player" id="player" name="player-five" value="{{ playerfive }}">
+                </div>  
+
+                <div class="col">
+                    <h5 class="text-center">Joueur n°6</h5>
+                    <input type="text" class="text-center form-control mail-player" id="player" name="player-six" value="{{ playersix }}">
+                </div>  
+            </div>
+
+            <div class="text-center align-btn">
+                <button type="submit" class="btn btn-primary">Envoyer les liens <i class="bi bi-envelope"></i></button>
+                <a href="http://localhost:3000/games/Quizz-In?user={{ user.username }}&hash={{ hash }}" class="btn btn-primary">Lancer la partie <i class="bi bi-dice-3"></i></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="/js/mail.js"></script>
+    <script src="/js/main.js"></script>
+{% endblock %}

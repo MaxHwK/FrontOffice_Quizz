@@ -1,0 +1,53 @@
+@media only screen and (max-width: 830px) and (orientation:portrait) {
+
+    .infocontainer,
+    .infolandscape {
+        display: block;
+        width: 100%;
+    }
+
+    .container {
+        margin: 0 0 0 -4%;
+    }
+
+    .pagicontainer {
+        margin-left: 18%;
+    }
+}
+
+@media only screen and (orientation:landscape) {
+
+    .infocontainer,
+    .infolandscape {
+        display: none;
+    }
+}
+
+.deconnexion {
+    cursor: pointer;
+}
+
+#id {
+    width: 2%;
+}
+
+#label {
+    width: 56%;
+}
+
+#level {
+    width: 2%;
+}
+
+#answers {
+    width: 20%;
+}
+
+#action {
+    width: 20%;
+}
+
+.btn {
+    width: 80px;
+    margin: 3px;
+}
